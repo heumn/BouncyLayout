@@ -45,7 +45,6 @@ public class BouncyLayout: UICollectionViewFlowLayout {
     
     public override func prepare() {
         super.prepare()
-
         guard let view = collectionView, let attributes = super.layoutAttributesForElements(in: CGRect(origin: view.bounds.origin, size: view.frame.size))?.flatMap({ $0.copy() as? UICollectionViewLayoutAttributes }) else { return }
         
         oldBehaviors(for: attributes).forEach { animator.removeBehavior($0) }
